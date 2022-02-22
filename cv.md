@@ -1,9 +1,13 @@
 # Yauheni Vysotski
+
 ![photo](http://demo-site.veterg.beget.tech/img/1.jpg)
+
 ### Contacts
+
 Phone: +375 33 306-33-39  
 [Telegram](https://t.me/johnnygrossamer), [Skype](https://join.skype.com/invite/bzl01hDmAhmf)  
 login Discord: Yauheni Vysot (@johnnygrossamer)
+
 ### About yourself
 
 In August 2021, I decided to change my profession to a front-end developer. I am currently actively studying.
