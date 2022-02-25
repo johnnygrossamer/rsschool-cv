@@ -7,6 +7,7 @@ footer.footer {
   color: $color-silver;
   background-color: $color-darkGray;
   border-top: 6px solid $color-silver;
+  padding: 0 20px;
 
   .footer_row {
     display: flex;
@@ -41,6 +42,10 @@ footer.footer {
         fill: #cccccc;
         stroke: #cccccc;
         background: url(../img/rss.svg) 0 0/cover no-repeat;
+
+        &:hover {
+          animation: click-me 3s ease-in-out .1s infinite;
+        }
       }
     }
   }
