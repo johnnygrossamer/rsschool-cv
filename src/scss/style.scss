@@ -1,0 +1,96 @@
+@import "reset";
+@import "fonts-icon";
+@import "fonts";
+/***************************/
+/*   adaptive properties   */
+/***************************/
+//Breakpoints
+$phone-only: 599;
+$tablet-portrait-up: 600;
+$tablet-landscape-up: 900;
+$desktop-up: 1200;
+@mixin for-phone-only {
+  @media (max-width: $phone-only + px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: $tablet-portrait-up + px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: $tablet-landscape-up + px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: $desktop-up + px) {
+    @content;
+  }
+}
+
+// Create adaptive property
+@mixin adaptiv-value($property, $minSize, $maxSize) {
+  $addSize: $maxSize - $minSize;
+  #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$desktop-up - 320}));
+  @include for-desktop-up {
+    #{$property}: $maxSize + px;
+  }
+}
+
+@mixin adaptiv-value-to-tablet-landscape($property, $minSize, $maxSize) {
+  $addSize: $maxSize - $minSize;
+  #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$tablet-landscape-up - 320}));
+  @include for-tablet-landscape-up {
+    #{$property}: $maxSize + px;
+  }
+}
+
+/********************/
+/*   basic styles   */
+/********************/
+
+// Color
+$color-title: #f5f5f5;
+$color-white: #fff;
+$color-silver: #ccc;
+$color-lightGray: #2d2e2e;
+$color-Gray: #2b2c2c;
+$color-darkGray: #292a2a;
+
+body {
+  font-family: OpenSans, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  min-width: 320px;
+
+  &.lock {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.content {
+  flex: 1 1 auto;
+}
+
+.container {
+  min-width: 320px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@import "_header";
+@import "_content";
+@import "_footer";

@@ -1,0 +1,47 @@
+/**************/
+/*   footer   */
+/**************/
+footer.footer {
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  color: $color-silver;
+  background-color: $color-darkGray;
+  border-top: 6px solid $color-silver;
+
+  .footer_row {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    padding: 20px 0;
+    @include for-tablet-portrait-up {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .footer__copyright {
+      margin-top: 20px;
+      @include for-tablet-portrait-up {
+        margin-top: 4px;
+      }
+
+      a {
+        transition: all .5s ease 0s;
+
+        &:hover {
+          color: $color-silver;
+        }
+      }
+    }
+
+    .footer__rss-link {
+      a {
+        display: inline-block;
+        width: 121px;
+        height: 45px;
+        fill: #cccccc;
+        stroke: #cccccc;
+        background: url(../img/rss.svg) 0 0/cover no-repeat;
+      }
+    }
+  }
+}
