@@ -1,4 +1,4 @@
-const project_folder = "dist";
+const project_folder = "docs";
 const source_folder = "src";
 
 const path = {
@@ -154,7 +154,7 @@ function createSvgSprite(){
             mode: {
                 stack: {
                     sprite: "../icons/icons.svg",
-                    example: true
+                    example: false
                 }
             }
         }))
