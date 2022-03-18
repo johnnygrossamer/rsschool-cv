@@ -1,0 +1,183 @@
+main.content {
+  color: $color-white;
+  background-color: $color-Gray;
+  @include for-tablet-landscape-up {
+    background: linear-gradient(to right, $color-darkGray 50%, $color-Gray 50%);
+  }
+
+  .content__row {
+    display: flex;
+    flex-direction: column;
+    @include for-tablet-landscape-up {
+      flex-direction: row;
+    }
+
+    .content__column {
+      display: flex;
+      flex: 0 1 50%;
+      justify-content: center;
+      padding-top: 100px;
+      color: #e5e5e5;
+
+      &._briefly {
+        padding-top: 270px;
+        color: #808080;
+        background-color: $color-darkGray;
+        @include for-tablet-landscape-up {
+          padding-top: 100px;
+        }
+
+        a {
+          transition: color .5s ease-in-out;
+          color: #808080;
+
+          &:hover {
+            color: $color-white;
+
+            i {
+              transform: scale(1.3);
+              color: $color-white;
+            }
+          }
+        }
+      }
+
+      .items {
+        padding: 10px 15px 88px;
+
+        section.selection {
+          padding-top: 90px;
+
+          h3 {
+            font-family: Roboto, sans-serif;
+            font-size: 21px;
+            display: inline-block;
+            width: 266px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid;
+          }
+
+          ul {
+            font-size: 18px;
+            padding-top: 8px;
+
+            &.contacts {
+              i {
+                font-size: 24px;
+                position: relative;
+                top: 4px;
+                display: inline-block;
+                margin-right: 10px;
+                margin-left: -12px;
+                transition: all .5s ease-in-out;
+              }
+            }
+
+            &.skills {
+              li:before {
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                margin-right: 10px;
+                margin-left: -7px;
+                content: "";
+                border: 1px solid #808080;
+                border-radius: 7px;
+              }
+            }
+
+            li {
+              margin-top: 12px;
+            }
+          }
+        }
+
+        section.experience {
+          font-family: Roboto, sans-serif;
+
+          &:last-child {
+            margin-top: 130px;
+          }
+
+          .title {
+            display: flex;
+
+            img {
+              width: 45px;
+              height: 45px;
+              margin-top: -12px;
+              margin-right: 16px;
+            }
+
+            h3 {
+              font-size: 20px;
+              font-weight: 700;
+              width: 100%;
+              padding-bottom: 20px;
+              border-bottom: 1px solid #e5e5e5;
+            }
+          }
+
+          ul {
+            li {
+              line-height: 22px;
+              display: flex;
+              flex-direction: column;
+              margin-left: 22px;
+              padding: 32px 30px 0 38px;
+              border-left: 1px solid #e5e5e5;
+              @include for-tablet-portrait-up {
+                flex-direction: row;
+              }
+              @include for-tablet-landscape-up {
+                flex-direction: column;
+              }
+              @include for-desktop-up {
+                flex-direction: row;
+              }
+
+              &:first-child {
+                margin-top: 6px;
+                padding-top: 26px;
+              }
+
+              .date {
+                position: relative;
+                flex-shrink: 0;
+                width: 90px;
+
+                &:before {
+                  position: absolute;
+                  top: 2px;
+                  left: -46px;
+                  display: inline-block;
+                  width: 16px;
+                  height: 16px;
+                  content: "";
+                  border: 1px solid $color-white;
+                  border-radius: 8px;
+                  background-color: $color-Gray;
+                }
+              }
+
+              .info {
+                h4.info__title {
+                  font-weight: 700;
+                }
+
+                h5.info__subtitle {
+                  font-size: 14px;
+                  font-style: italic;
+                }
+
+                p.info__text {
+                  max-width: 400px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
